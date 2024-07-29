@@ -1,0 +1,30 @@
+/*ACTIVIDAD 1 - CALCULAR EDAD*/
+#include <stdio.h> //Librería de entrada y salida en C
+#include <iostream> //Librería de entrada y salida en C++
+#include <cstdlib> // Librería necesaria para usar system("pause")
+#include <locale.h> //Librería para incluir tildes
+int main() //Cuerpo del programa 
+{
+setlocale(LC_CTYPE, "Spanish"); //Definimos las tildes del idioma español
+int edad; //Declaramos la variable edad como tipo de dato entero ya que son años enteros   
+do //Creamos un ciclo para volver a solicitar la edad en caso de ingresar algo ilógico
+{std::cout << "Ingrese la edad: "; //solicitamos por pantalla a usuario que ingrese su edad
+ std::cin >> edad; //Asignamos el dato en la variable "edad"
+if (edad < 0 || edad > 125) // Se valida si usuario ingresó un dato ilógico
+{std::cout << "Por favor ingrese una edad válida" << std::endl;} /*Si usuario colocó un dato
+                          //std::endl hace un salto de línea       ilógico arrojamos por pantalla el error
+                                                                   y solicitamos una edad más lógica*/
+} while (edad < 0 || edad > 125); //El sistema se detendrá en el ingreso de la edad mientras no se cumplan las condiciones lógicas
+if (edad >= 18) //El programa valida el dato que ingresó usuario con la mayoría de edad del país donde radiquemos	
+{std::cout << "Es mayor de edad" << std::endl;} /*Si tiene 18 años o más en el caso de México mostramos
+	                                                      por pantalla que es mayor de edad*/
+else //Si no cumple la condición...
+{ std::cout << "Es menor de edad" << std::endl;} //Se muestra por pantalla que es menor de edad
+//NOTA: En los requerimientos no precisan si el usuario se valida a sí mismo o registra a alguien más 
+// Estamos solicitando la edad en años, sin embargo si se trata de un bebé que no cumple el año, se colocará 0 años de edad
+
+system("pause"); // Pausa el programa hasta que el usuario presione una tecla
+
+return 0; //Asume que el programa ha terminado con éxito
+
+}//PERIODO 2____________Lenguajes de Programación 1 ____________  Misael Medina Aispuro
